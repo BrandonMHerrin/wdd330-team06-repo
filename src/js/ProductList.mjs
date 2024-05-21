@@ -13,7 +13,6 @@ const productCardTemplate = (product) =>
               <h2 class="card__name">${product.NameWithoutBrand}</h2>
               ${displayDiscount(product)}
               </a>
-              <button class="lookup-button" id="${product.Id}"><img src="/images/icons/info.svg" alt="Google Material Info Icon"></button>
           </li>
   `;
 
@@ -31,8 +30,8 @@ export default class ProductListing {
     return this.data;
   }
 
-  renderList() {
-    renderListWithTemplate(productCardTemplate, this.listElement, this.data); 
+  renderList(list) {
+    renderListWithTemplate(productCardTemplate, this.listElement, list); 
   }
 }
 
